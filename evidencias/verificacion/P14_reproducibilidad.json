@@ -1,0 +1,61 @@
+{
+  "chequeos": {
+    "misma_semilla_reproduce": true,
+    "muestras_compartidas_entre_capacidades": true,
+    "replicas_con_muestras_distintas": true,
+    "otra_semilla_otras_muestras": true,
+    "servicios_dentro_de_limites": true,
+    "intervalos_no_constantes": true
+  },
+  "replica_0": {
+    "semillas": [
+      2026,
+      2027
+    ],
+    "intervalos": [
+      0.2536674811692657,
+      1.3963827833829814,
+      1.4341532912125778,
+      3.932234107752934,
+      0.21658929983880643
+    ],
+    "servicios": [
+      1.9309486659144528,
+      2.926763180981227,
+      1.3294173318045535,
+      2.606191964948308,
+      2.802409242974109
+    ]
+  },
+  "replica_1": {
+    "semillas": [
+      2028,
+      2029
+    ],
+    "intervalos": [
+      0.877344371085403,
+      0.3938810716936216,
+      0.05639221305302501,
+      0.8997664590301805,
+      6.563330164627187
+    ],
+    "servicios": [
+      3.503582613297074,
+      2.967417387018949,
+      4.219339103653478,
+      3.56962070988848,
+      4.7965086346098245
+    ]
+  },
+  "semilla_2027_replica_0": {
+    "intervalos": [
+      0.22932546670607654,
+      1.247436440953184,
+      0.027314620507817446,
+      0.7786370724816601,
+      1.0420377473890865
+    ]
+  },
+  "recomendacion_2026": 3,
+  "recomendacion_2027": 3
+}

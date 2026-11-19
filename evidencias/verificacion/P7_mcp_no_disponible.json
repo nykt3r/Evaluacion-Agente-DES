@@ -1,0 +1,32 @@
+{
+  "errores_mcp": [
+    {
+      "ts": "2026-11-19T02:46:32+00:00",
+      "hilo": "P7_mcp_no_disponible-hilo",
+      "origen": "modelo de ensayo",
+      "tipo": "error_mcp",
+      "operacion": "simular",
+      "detalle": "No se pudo usar el servidor MCP en http://127.0.0.1:8799/mcp (¿está iniciado?). No se generaron resultados nuevos. Detalle: ConnectError('All connection attempts failed')"
+    }
+  ],
+  "estado_final": {
+    "escenario": {
+      "personas": 20,
+      "llegadas": {
+        "tipo": "exponencial",
+        "media": 2.0
+      },
+      "servicio": {
+        "tipo": "triangular",
+        "minimo": 1.0,
+        "moda": 3.0,
+        "maximo": 5.0
+      },
+      "replicas": 30,
+      "semilla_base": 2026
+    },
+    "resultados": {},
+    "recomendacion": null,
+    "decision": null
+  }
+}

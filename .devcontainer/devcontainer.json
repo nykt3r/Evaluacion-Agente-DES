@@ -1,0 +1,46 @@
+{
+  // Entorno reproducible para macOS (Intel o Apple Silicon), Windows (Docker Desktop con WSL 2)
+  // y Linux (Docker Engine o Docker Desktop). La imagen y uv son multiarquitectura (amd64/arm64).
+  "name": "Evaluación agente DES",
+  "build": { "dockerfile": "Dockerfile" },
+
+  // Proceso init dentro del contenedor: Ctrl+C detiene bien el servidor MCP y el agente.
+  "init": true,
+
+  // En Linux, ajusta el UID del usuario del contenedor al del host para no dejar archivos de root.
+  "updateRemoteUserUID": true,
+
+  // .venv vive en un volumen de Docker: no se mezcla con un entorno creado en el host
+  // (macOS, Windows o Linux) y evita incompatibilidades de binarios entre sistemas.
+  "mounts": [
+    "source=evaluacion-agente-des-venv-${devcontainerId},target=${containerWorkspaceFolder}/.venv,type=volume"
+  ],
+
+  // Dependencias base + extra "mcp" con las versiones exactas de uv.lock. La segunda orden evita el
+  // error "dubious ownership" de git cuando la carpeta viene de un host Windows o macOS.
+  "postCreateCommand": "sudo chown vscode:vscode .venv && uv sync --locked --extra mcp && git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+  "containerEnv": {
+    "LANG": "C.UTF-8",
+    "PYTHONUTF8": "1"
+  },
+
+  // Opcional: reutiliza la clave si el host la exporta; el archivo .env tiene prioridad.
+  "remoteEnv": { "OPENROUTER_API_KEY": "${localEnv:OPENROUTER_API_KEY}" },
+
+  "forwardPorts": [8765],
+  "portsAttributes": { "8765": { "label": "Servidor MCP DES", "onAutoForward": "silent" } },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "python.testing.pytestEnabled": true,
+        "files.eol": "\n"
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}

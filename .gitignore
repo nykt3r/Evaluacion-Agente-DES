@@ -1,0 +1,16 @@
+# Secretos y entornos
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Cachés
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.langgraph_api/
+
+# Sistema
+.DS_Store

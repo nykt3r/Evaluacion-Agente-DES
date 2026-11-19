@@ -1,0 +1,29 @@
+{
+  "decision_antes": null,
+  "decision_despues": {
+    "servidores": 3,
+    "nota": "Menor capacidad que cumple la meta de 1 minuto.",
+    "meta_espera": 1.0,
+    "configuracion": {
+      "personas": 20,
+      "llegadas": {
+        "tipo": "exponencial",
+        "media": 2.0
+      },
+      "servicio": {
+        "tipo": "triangular",
+        "minimo": 1.0,
+        "moda": 3.0,
+        "maximo": 5.0
+      },
+      "replicas": 30,
+      "semilla_base": 2026
+    },
+    "huella": "f29ef0a947",
+    "archivos": {
+      "muestras_y_resultados_json": "evidencias/simulaciones/evaluacion_f29ef0a947.json",
+      "resultados_por_replica_csv": "evidencias/simulaciones/evaluacion_f29ef0a947.csv"
+    },
+    "rol": "operador"
+  }
+}

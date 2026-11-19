@@ -1,0 +1,17 @@
+{
+  "regla_controlada": [
+    {
+      "meta": 2.0,
+      "obtenido": 2,
+      "esperado": 2
+    },
+    {
+      "meta": 8.0,
+      "obtenido": 1,
+      "esperado": 1
+    }
+  ],
+  "recomendacion_meta_1": 3,
+  "recomendacion_meta_2": 2,
+  "agregados_conservados": true
+}

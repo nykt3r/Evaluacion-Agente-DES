@@ -1,0 +1,11 @@
+{
+  "estado_hilo_B": {
+    "escenario": null,
+    "resultados": null,
+    "decision": null
+  },
+  "error_herramienta": [
+    "Faltan datos para simular: personas, llegadas_media, servicio_tipo, servicio_minimo, servicio_moda, servicio_maximo, replicas, semilla_base. Pídeselos al usuario."
+  ],
+  "pregunta": "No hay datos en este hilo. ¿Cuántas personas, qué media de llegadas, qué servicio, cuántas réplicas y qué semilla?"
+}

@@ -1,0 +1,59 @@
+{
+  "casos": [
+    {
+      "caso": "0 personas",
+      "rechazo_python": "personas debe ser un entero entre 1 y 100.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "101 personas",
+      "rechazo_python": "personas debe ser un entero entre 1 y 100.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "media exponencial 0",
+      "rechazo_python": "La media exponencial debe ser positiva.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "media exponencial -2",
+      "rechazo_python": "La media exponencial debe ser positiva.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "moda fuera del intervalo",
+      "rechazo_python": "Triangular inválida: se requiere 0 < minimo < moda < maximo.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "uniforme invertida",
+      "rechazo_python": "Uniforme inválida: se requiere 0 < minimo < maximo.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "29 réplicas",
+      "rechazo_python": "replicas debe ser un entero entre 30 y 100.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "semilla negativa",
+      "rechazo_python": "semilla_base debe ser un entero no negativo.",
+      "rechazo_mcp": "error"
+    },
+    {
+      "caso": "meta -1.0",
+      "rechazo_python": "La meta de espera debe ser un número finito mayor o igual a cero.",
+      "rechazo_contexto": "rechazado"
+    },
+    {
+      "caso": "meta nan",
+      "rechazo_python": "La meta de espera debe ser un número finito mayor o igual a cero.",
+      "rechazo_contexto": "rechazado"
+    }
+  ],
+  "estado_tras_rechazo_en_agente": {
+    "escenario": null,
+    "resultados": null,
+    "decision": null
+  }
+}

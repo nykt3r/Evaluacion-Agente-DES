@@ -1,0 +1,23 @@
+{
+  "tarea_delegada": "Simula este escenario con 1, 2 y 3 puestos: {\"personas\": 20, \"llegadas_media\": 2.0, \"servicio_tipo\": \"triangular\", \"servicio_minimo\": 1.0, \"servicio_moda\": 3.0, \"servicio_maximo\": 5.0, \"replicas\": 30, \"semilla_base\": 2026}",
+  "llamada_mcp_del_especialista": {
+    "ts": "2026-11-19T02:46:34+00:00",
+    "hilo": "P12_subagente-hilo",
+    "origen": "modelo de ensayo",
+    "tipo": "especialista_llamada_mcp",
+    "herramienta": "evaluar_capacidades_des",
+    "argumentos": {
+      "personas": 20,
+      "llegadas_media": 2.0,
+      "servicio_tipo": "triangular",
+      "servicio_minimo": 1.0,
+      "servicio_moda": 3.0,
+      "servicio_maximo": 5.0,
+      "replicas": 30,
+      "semilla_base": 2026
+    }
+  },
+  "huella_resultado": "f29ef0a947",
+  "huella_en_estado": "f29ef0a947",
+  "recomendacion_del_coordinador": 3
+}

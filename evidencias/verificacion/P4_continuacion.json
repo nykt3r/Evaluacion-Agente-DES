@@ -1,0 +1,17 @@
+{
+  "conservado": {
+    "personas": true,
+    "llegadas": true,
+    "replicas": true,
+    "semilla_base": true
+  },
+  "servicio_nuevo": {
+    "tipo": "uniforme",
+    "minimo": 1.0,
+    "maximo": 3.0
+  },
+  "intervalos_de_llegada_identicos": true,
+  "servicios_nuevos": true,
+  "recomendacion_antes": 3,
+  "recomendacion_despues": 2
+}

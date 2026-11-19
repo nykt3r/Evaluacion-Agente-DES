@@ -1,0 +1,28 @@
+{
+  "recomendacion": 3,
+  "recalculado_desde_csv": [
+    {
+      "puestos": 1,
+      "espera_promedio_media": 11.88101807699591,
+      "de_R_menos_1": 4.545517483243134,
+      "salida_media": 62.21219998547347
+    },
+    {
+      "puestos": 2,
+      "espera_promedio_media": 1.3759454072922368,
+      "de_R_menos_1": 1.3774631502548065,
+      "salida_media": 42.15850420687739
+    },
+    {
+      "puestos": 3,
+      "espera_promedio_media": 0.25051421718375105,
+      "de_R_menos_1": 0.3574698115226598,
+      "salida_media": 39.938507597578116
+    }
+  ],
+  "archivos": {
+    "muestras_y_resultados_json": "evidencias/simulaciones/evaluacion_f29ef0a947.json",
+    "resultados_por_replica_csv": "evidencias/simulaciones/evaluacion_f29ef0a947.csv"
+  },
+  "huella": "f29ef0a947"
+}

@@ -1,0 +1,6 @@
+{
+  "registrar_visible_para_observador": false,
+  "validacion_directa": "Solo un operador puede registrar decisiones.",
+  "agente_guardia": "Solo un operador puede registrar decisiones.",
+  "decision": null
+}

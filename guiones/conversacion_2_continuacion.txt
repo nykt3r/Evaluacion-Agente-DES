@@ -1,0 +1,6 @@
+# Conversación real 2 (P1 + P4 + aclaración): cambio de un parámetro en un turno posterior, mismo hilo.
+# Ejecutar:  uv run --locked --extra mcp python main.py --rol operador --meta 1 --hilo real-continuacion --etiqueta real_2_continuacion --guion guiones/conversacion_2_continuacion.txt
+Evalúa la oficina con 20 personas, llegadas exponenciales con media de 2 minutos, servicio triangular con mínimo 1, moda 3 y máximo 5 minutos, 30 réplicas y semilla base 2026. Compara 1, 2 y 3 puestos y recomienda la capacidad.
+Ahora usa un servicio uniforme entre 1 y 3 minutos; conserva los demás datos.
+Cambia el servicio a 1 minuto.
+/estado

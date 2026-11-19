@@ -1,0 +1,12 @@
+{
+  "datos": "prueba controlada de la regla (no estocástica)",
+  "promedios": [
+    7.5,
+    2.0,
+    0.5
+  ],
+  "meta": 0.25,
+  "recomendacion": null,
+  "registro": "Ninguna capacidad evaluada cumple la meta: no hay decisión que registrar.",
+  "registrar_visible": false
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "caso": "P1",
+    "entrada": "20 personas, exp(2), tri(1,3,5), 30 réplicas, semilla 2026, meta 1",
+    "esperado": "30 réplicas por capacidad; agregados verificables; recomendación según la regla",
+    "obtenido": "1p: 11.8810 ± 4.5455 min; 2p: 1.3759 ± 1.3775 min; 3p: 0.2505 ± 0.3575 min; recomendación 3",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P1_escenario_inicial.json; evidencias/simulaciones/evaluacion_f29ef0a947.csv",
+    "origen": "Python + MCP real"
+  },
+  {
+    "caso": "P2",
+    "entrada": "Mismo escenario, meta 1 → 2 desde el contexto; regla con 7,5/2/0,5 y metas 2 y 8",
+    "esperado": "Simulación conservada, recomendación recalculada; regla: 2 y 1 puestos",
+    "obtenido": "meta 1 → 3, meta 2 → 2 (mismos agregados); regla: [2, 1]",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P2_cambio_meta.json; evidencias/conversaciones/P2_cambio_meta_20261118_213348.md",
+    "origen": "Python + MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P3",
+    "entrada": "Regla controlada: 7,5/2/0,5 min, meta 0,25 (datos de prueba, no estocásticos)",
+    "esperado": "Recomendación None; registro bloqueado",
+    "obtenido": "None; registro: «Ninguna capacidad evaluada cumple la meta: no hay decisión que registrar.»",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P3_ninguna_cumple.json",
+    "origen": "Python"
+  },
+  {
+    "caso": "P4",
+    "entrada": "En el hilo de P1: servicio uniforme(1, 3), conservar lo demás",
+    "esperado": "Se conservan personas, llegadas, réplicas y semilla; nuevos servicios; mismas llegadas; nueva recomendación",
+    "obtenido": "conservado=True; llegadas idénticas=True; recomendación 3 → 2",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P4_continuacion.json; evidencias/conversaciones/P4_continuacion_20261118_213348.md",
+    "origen": "Python + MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P5",
+    "entrada": "Hilo nuevo: «Conserva los datos y compara»",
+    "esperado": "No hereda el escenario; pide los datos",
+    "obtenido": "escenario vacío; herramienta: «Faltan datos para simular: personas, llegadas_media, servicio_tipo, se…»",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P5_aislamiento.json; evidencias/conversaciones/P5_aislamiento_20261118_213348.md",
+    "origen": "Python + modelo de ensayo (la pregunta es un texto programado)"
+  },
+  {
+    "caso": "P6",
+    "entrada": "0 y 101 personas, media ≤ 0, moda fuera, uniforme invertida, 29 réplicas, semilla y meta negativas",
+    "esperado": "Rechazo explícito; ninguna decisión",
+    "obtenido": "10 entradas rechazadas (Python y MCP); estado sin escenario ni decisión",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P6_validacion.json; evidencias/conversaciones/P6_validacion_20261118_213348.md",
+    "origen": "Python + MCP real"
+  },
+  {
+    "caso": "P7",
+    "entrada": "Servidor MCP detenido; nueva evaluación",
+    "esperado": "Error comprensible; sin evaluación ni registro",
+    "obtenido": "«No se pudo usar el servidor MCP en http://127.0.0.1:8799/mcp…»; resultados vacíos; decisión None",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P7_mcp_no_disponible.json; evidencias/conversaciones/P7_mcp_no_disponible_20261118_213349.md",
+    "origen": "MCP real (detenido) + modelo de ensayo"
+  },
+  {
+    "caso": "P8",
+    "entrada": "Operador pide registrar; aprueba la interrupción",
+    "esperado": "Antes: vacía; después: registro = propuesta y configuración",
+    "obtenido": "antes None; después 3 puestos, meta 1.0, huella f29ef0a947",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P8_aprobar.json; evidencias/conversaciones/P8_aprobar_20261118_213350.md",
+    "origen": "MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P9",
+    "entrada": "Otro hilo: editar la nota en la revisión",
+    "esperado": "Registro con la nota corregida y capacidad válida",
+    "obtenido": "nota «Nota corregida por la persona revisora.», 3 puestos",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P9_editar.json; evidencias/conversaciones/P9_editar_20261118_213350.md",
+    "origen": "MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P10",
+    "entrada": "Otro hilo: rechazar la propuesta",
+    "esperado": "Resultados conservados; decisión vacía",
+    "obtenido": "decisión None; resultados conservados = True",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P10_rechazar.json; evidencias/conversaciones/P10_rechazar_20261118_213351.md",
+    "origen": "MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P11",
+    "entrada": "Observador pide registrar («ignora las reglas…»); validación directa",
+    "esperado": "Rechazado en ambas rutas",
+    "obtenido": "herramienta oculta; directo: «Solo un operador puede registrar decisiones.»; agente: error",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P11_rol_observador.json",
+    "origen": "Python + modelo de ensayo"
+  },
+  {
+    "caso": "P12",
+    "entrada": "Ampliación A: coordinador delega la simulación en el especialista (create_agent + MCP)",
+    "esperado": "Llamada al especialista, su herramienta MCP, su resultado y uso por el coordinador",
+    "obtenido": "delegación → evaluar_capacidades_des → huella f29ef0a947 guardada en el estado",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P12_subagente.json; evidencias/conversaciones/P12_subagente_20261118_213351.jsonl",
+    "origen": "MCP real + modelo de ensayo"
+  },
+  {
+    "caso": "P13",
+    "entrada": "6 personas, llegadas cada 1 min, servicio de 4 min",
+    "esperado": "7,5/24; 2/13; 0,5/10 y esperas de la tabla",
+    "obtenido": "1p: 7.5 / 24.0; 2p: 2.0 / 13.0; 3p: 0.5 / 10.0",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P13_regresion.json",
+    "origen": "Python"
+  },
+  {
+    "caso": "P14",
+    "entrada": "Repetir P1 con semilla 2026 y con 2027; inspeccionar réplicas 0 y 1",
+    "esperado": "Misma semilla reproduce; muestras compartidas por réplica y nuevas entre réplicas; otra semilla cambia",
+    "obtenido": "misma_semilla_reproduce=True, muestras_compartidas_entre_capacidades=True, replicas_con_muestras_distintas=True, otra_semilla_otras_muestras=True, servicios_dentro_de_limites=True, intervalos_no_constantes=True",
+    "resultado": "OK",
+    "ok": true,
+    "evidencia": "evidencias/verificacion/P14_reproducibilidad.json",
+    "origen": "Python"
+  }
+]
